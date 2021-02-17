@@ -1,8 +1,8 @@
- # __Desarrollo de Sistemas informáticos__
- 
-   - ###  *Institución | Universidad de La Laguna*
-   - ###  *Autor | Joel Francisco Escobar Socas*
-     - #### contacto | alu0101130408@ull.edu.es 
+  
+  - # *Asignatura | Desarrollo de Sistemas Informáticos*
+  - #  *Institución | Universidad de La Laguna*
+  - # *Autor | Joel Francisco Escobar Socas*
+     - # contacto | alu0101130408@ull.edu.es 
 
 # __Práctica 01: Configuración de la máquina virtual en el IaaS__
 
