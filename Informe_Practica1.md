@@ -17,8 +17,8 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
     - [Instalación de la VPN de la Universidad de la Laguna](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/).
     
      Una vez instalada la VPN de la Ull siguiendo los pasos que se encuentras especificiados en el link anterior, comenzaremos acceder al [servicio IaaS](https://iaas.ull.es/ovirt-engine/) y introducimos nuestros datos de la cuenta asociada a la ULL. una vez accedemos al portal, nos aparecerá todas las maquinas que tengamos creadas, en este caso encenderemos la maquina que aparecerá como DSI.
-##  Dificultades Encontradas
+  - ###  Dificultades Encontradas
 
-## Conclusión
+  - ### Conclusión
 
-## Bibliografia
+  - ### Bibliografia
