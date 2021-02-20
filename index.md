@@ -167,12 +167,14 @@ y seleccionamos la versión que queramos con las teclas de dirección del ordena
   - [Plataforma del IaaS de la ULL](https://iaas.ull.es).
   - [Introducción a MarkDown](https://guides.github.com/features/mastering-markdown/).
   - [Introduccion a Github Pages](https://docs.github.com/en/github/working-with-github-pages).
-  - [Script de -git-prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
+  - [Script de .git-prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
   - [Documentación de configuración de la VPN de la ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/).
-  - [Gua de configuración de git](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez).
+  - [Guia de configuración de git](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez).
   - [Node versión Manager](https://github.com/nvm-sh/nvm).
   - [Node Package Manager](https://www.npmjs.com/).
   - [Introducción a Github](https://lab.github.com/githubtraining/introduction-to-github).
   - [Información sobre Jeckyll](https://jekyllrb.com/).
+  - [Página de la Universidad de la Laguna](https://www.ull.es/)
+  
 
 
