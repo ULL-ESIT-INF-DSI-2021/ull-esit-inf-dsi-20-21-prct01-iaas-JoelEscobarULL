@@ -163,3 +163,16 @@ y seleccionamos la versión que queramos con las teclas de dirección del ordena
 - ## Conclusión
 
 - ## Bibliografia
+  - [Guión de la práctica 1 de la asignatura de Desarrollo de Sistemas Informaticos](https://ull-esit-inf-dsi-2021.github.io/prct01-iaas/).
+  - [Plataforma del IaaS de la ULL](https://iaas.ull.es).
+  - [Introducción a MarkDown](https://guides.github.com/features/mastering-markdown/).
+  - [Introduccion a Github Pages](https://docs.github.com/en/github/working-with-github-pages).
+  - [Script de -git-prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
+  - [Documentación de configuración de la VPN de la ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/).
+  - [Gua de configuración de git](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez).
+  - [Node versión Manager](https://github.com/nvm-sh/nvm).
+  - [Node Package Manager](https://www.npmjs.com/).
+  - [Introducción a Github](https://lab.github.com/githubtraining/introduction-to-github).
+  - [Información sobre Jeckyll](https://jekyllrb.com/).
+
+
