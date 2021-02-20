@@ -96,7 +96,68 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
   Ahora se debería poder iniciar una conexión SSHsolo con el nombre de la máquina virtual, por ejemplo `ssh iaas-dsi22`.
  
   - ### Instalación de Git y Node.js
-  
+    - #### Git
+        Vamos a hacer uso de git, entonces necesitaremos instalarlo:
+        ``` 
+        $ sudo apt install git
+        ```
+        Si ya lo tiene instalado no se preocupe, normalmente viene pre-instalado en el sistema operativo. Necesitaremos configurar git en nuestra máquina, en el         siguiente [archivo](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez) podrá ver como configurar git         por primera vez.
+        ```
+        $ git config --global user.name "Joel Escobar"
+        $ git config --global user.email alu0101130408@ull.edu.es
+        $ git config --list
+        ```        
+        Con estos comandos lograremos configurar rapidamente git. Ahora lo que faltaría por hacer es configurar el prompt para que se visualize la ruta en la que       nos encontramos en ese momento, por lo que haremos uso de un [script](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh), lo que hice para obtener este script fue crear un fichero llamado "git-prompt.sh" con el comando touch y luego lo edite con vim o vi copiandole el archivo anterior de esta forma la ejecución quedara de la siguiente forma:
+        ```
+        $ touch ~/.git-prompt.sh
+        $ vi ~/.git-prompt
+        $ vi .bashrc
+        $ tail .bashrc
+        -> añadir al final del archivo 
+            source ~/.git-prompt.sh
+            PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'+
+        
+        $ exec bash -l
+        ```
+        tras usar todos los comandos anteriores deberia de visualizarse asi nuestro prompt
+        (Imagen de visualizacion del prompt)
+        Para visualizar la rama de trabajo actual deberemos generar una clave y añadirla a github, lo primero será copiar la clave que visualizaremos con el comando:
+        ```
+        $ cat ~/.ssh/id_rsa.pub
+        ```
+       E iremos a nuestra cuenta de github y tras darle a "settings" vamos al apartado de ""SSG and GPG keys" y pulsamos sobre "new SSH key" ponemos el nombre que queramos en mi caso le puse "DSI key" y para guardarla le damos a "add SSH key", debería de quedar algo como:
+       (imagen github key)
+  Si todo ha ido bien, ahora podría ejecutar el siguiente comando desde la máquina virtual para clonar un repositorio:
+  ```
+  $git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
+  ```
+  De esta forma clonaremos el repositorio a nuestro Github sin necesidad de introducir ninguna credencial en el proceso, además gracias a lo que hicimos antes podemos ver la rama de trabajo al acceder al repositorio
+ (Imagen p1_repositorio)
+ 
+   - #### Node.js
+     Lo que faltaria ahora es instalar Node Version Manager (nvm), el gestor de versiones de Node.js. Node.js es un entorno que permite la ejecución de código desarrollado en JavaScript y variantes de este. Ejecutaremos:
+     ```
+     $wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+     $exec bash -l
+     $nvm --version
+     ```
+     Vemos como hemos instalado correctamente nvm y la versión que tenemos instalada en la máquina, como hay versiones superiores lo que haremos será actualizarlo a la última versión posible:
+     ```
+     $nvm install node
+     $node --version
+     $npm --version
+     ```
+ En caso de querer instalar una version especifica de nvm podemos ejecutar:
+ ```
+ $nvm install 12.0.0
+ ```
+ 
+Y también podemos cambiar entre versiones previamente instaladas con:
+```
+$nvm list
+```
+y seleccionamos la versión que queramos con las teclas de dirección del ordenador.
+
 - ###  Dificultades Encontradas
 
 - ## Conclusión
