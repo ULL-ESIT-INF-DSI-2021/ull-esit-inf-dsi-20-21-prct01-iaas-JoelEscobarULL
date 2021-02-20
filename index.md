@@ -23,8 +23,54 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
      ```
      siendo 'XXX' la dirección IP que se le ha asignado.
      
-     A continuación pulsaremos sobre "yes" y lo que haremos será introducir la contraseña, en este caso será 'usuario' y nos pedirá otra vez la contraseña y luego la nueva contraseña, que será la que remplazaremos asi que deberiamos anotarla bien.
+     A continuación introducimos "yes" y lo que haremos será introducir la contraseña, en este caso será 'usuario' y nos pedirá otra vez la contraseña y luego la nueva contraseña, que será la que remplazaremos asi que deberiamos anotarla bien. Tener en cuenta que tendrá que volver a iniciar una conexión SSH con su máquina, pero esta vez deberá usar su nueva contraseña para acceder, para cerrar la conexión anterior basta con introducir "exit" en la sesión iniciada.
      
+Ahora lo que haremos será modificar el nombre de host de la máquina, buscaremos modificar los ficheros de configuración ejecutando los siguientes comandos:
+    ``` Bash
+     $ cat /etc/hostname
+     $ sudo vi /etc/hostname
+     $ cat /etc/hostname
+    ```
+se deberá de visualizar al final algo así:
+    (Imagen con el archivo de configuración)
+En mi caso llamé a mi máquina DSI22, también podemos modificar el fichero de configuración de la siguiente forma:
+   ```
+   $ sudo vi /etc/hosts
+   $ cat /etc/hosts
+   ```
+Quedaría de la siguiente forma:
+    (Imagen de HOST)
+    
+  En este caso, he cambiado el antiguo nombre de host ubuntu, por el nombre de host iaas-dsi22. Antes de proceder a reiniciar la máquina virtual para que todos los cambios tengan efecto, actualice el software de la misma, bastará con las siguientes líneas:
+  ```
+  $ sudo apt update
+  $ sudo apt upgrade
+  ```
+  Y ahora procedemos a reiniciar la máquina, solo necesitará usar:
+  ```
+  $ sudo reboot
+  ```
+  En lo que la máquina se reincia, podemos hacer que para conectarnos en la máquina no introduzcamos la IP, para hacer esto bastará con editar el fichero `/etc/hosts` en nuestra máquina local (nuestro ordenador personal, no la máquina virtual de la asignatura) y asignarle la dirección ip de nuestra maquina virtual 
+  ```
+  $ cat /etc/hosts
+  $ sudo vi /etc/hosts
+  $ cat /etc/hosts
+  ```
+  Se debería poder visualizar algo así:
+  (imagen del fichero local)
+  
+ En caso de no haberlo hecho, en nuestra propia máquina configuraremos la infraestructura de clave pública-privada, para ver si tenemos el fichero generado ejecutaremos el comando `cat .ssh/id_rsa.pub` si no lo tenemos, bastará con hacer:
+ ```
+ $ ssh-keygen
+ ```
+ Y se nos abrirá un script que nos pedirá las opciones de configuración para generar la clave, bastará las de defecto, para ello, simplemente le damos a enter sin escribir nada, es importante que no se introduzca ninguna passphrase asociada al par de claves pública-privada.
+ y ahora ejecutamos el siguiente comando para copiar la clave que acabamos de generar desde nuestra máquina a la máquina virtual
+  ```
+  $ ssh-copy-id usuario@iaas-dsi2
+  ```
+  Acuerdese de cambiar el nombre del host, al que haya usted introducido, en mi caso le puse iaas-dsi22
+  
+  
  - ###  Dificultades Encontradas
 
  - ### Conclusión
