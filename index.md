@@ -35,7 +35,7 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
       ```
     Se deberá de visualizar al final algo así:
     
-    (Imagen con el archivo de configuración)
+    ![Conf_hostname](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/hostname.png?raw=true)
     
     En mi caso llamé a mi máquina DSI22, también podemos modificar el fichero de configuración de la siguiente forma:
      ```
@@ -44,7 +44,7 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
      ```
     Quedaría de la siguiente forma:
     
-    (Imagen de HOST)
+    ![Conf_hosts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/hosts.png?raw=true)
     
     En este caso, he cambiado el antiguo nombre de host ubuntu, por el nombre de host iaas-dsi22. Antes de proceder a reiniciar la máquina virtual para que todos   los cambios tengan efecto, actualice el software de la misma, bastará con las siguientes líneas:
     ```
@@ -65,7 +65,7 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
     
     Se debería poder visualizar algo así:
     
-    (imagen del fichero local)
+    ![local_hosts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/fichero_host_local.png?raw=true)
     
     En caso de no haberlo hecho, en nuestra propia máquina configuraremos la infraestructura de clave pública-privada, para ver si tenemos el fichero generado ejecutaremos el comando `cat .ssh/id_rsa.pub` si no lo tenemos, bastará con hacer:
      ```
@@ -87,7 +87,8 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
      $ cat ~/.ssh/config 
      ``` 
     Deberá quedar algo como:
-    (imagen con el config de la maquina virtual)
+     ![ssh_config](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/ficheros_config.png?raw=true)
+    
     También deberiamos generar las claves necesarias como hicimos con anterioridad en la máquina local:
      ```
      $ ssh-keygen 
@@ -97,7 +98,7 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
      $ cat .ssh/id_rsa.pub 
      ```
     En mi caso se ve así:
-    (Imagen de la clave )
+    ![ssh_key](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/clave_virtual.png?raw=true)
     Ahora se debería poder iniciar una conexión SSHsolo con el nombre de la máquina virtual, por ejemplo `ssh iaas-dsi22`.
  
       
