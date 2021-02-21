@@ -62,7 +62,6 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
      $ sudo vi /etc/hosts
      $ cat /etc/hosts
      ```
-    
     Se debería poder visualizar algo así:
     
     ![local_hosts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/fichero_host_local.png?raw=true)
@@ -80,19 +79,18 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
      ``` 
      $ ssh usuario@iaas-dsi22
      ```
-    Si tampoco quisiera utilizar el nombre de usuario (usuario) de la máquina virtual a la hora de conectarse vía SSH, puede configurar el fichero ` ~/.ssh/config` en su máquina local
-     ```
-     $ touch ~/.ssh/config
-     $ vi ~/.ssh/config 
-     $ cat ~/.ssh/config 
-     ``` 
-    Deberá quedar algo como:
+     Si tampoco quisiera utilizar el nombre de usuario (usuario) de la máquina virtual a la hora de conectarse vía SSH, puede configurar el fichero `         ~/.ssh/config` en su máquina local
+      ```
+      $ touch ~/.ssh/config
+      $ vi ~/.ssh/config 
+      $ cat ~/.ssh/config
+      ```
+     Deberá quedar algo como:
      ![ssh_config](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/ficheros_config.png?raw=true)
-    
-    También deberiamos generar las claves necesarias como hicimos con anterioridad en la máquina local:
+     También deberiamos generar las claves necesarias como hicimos con anterioridad en la máquina local:
      ```
-     $ ssh-keygen 
-     ```
+      $ ssh-keygen 
+      ```
     nos preguntará donde introducimos la clave especificaremos la siguiente ruta: `/home/usuario/.ssh/id_rsa`. Y pulsamos enter en la siguiente pregunta para hacer que obtenga el passphrase por defecto. Ahora si queremos ver la clave bastará con hacer:
      ```
      $ cat .ssh/id_rsa.pub 
@@ -127,21 +125,21 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
          $ exec bash -l
          ```
         tras usar todos los comandos anteriores deberia de visualizarse asi nuestro prompt
-        (Imagen de visualizacion del prompt)
+        ![prompt](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/pormpt-2.png?raw=true)
         Para visualizar la rama de trabajo actual deberemos generar una clave y añadirla a github, lo primero será copiar la clave que visualizaremos con el comando:
          ```
          $ cat ~/.ssh/id_rsa.pub
          ```
         E iremos a nuestra cuenta de github y tras darle a "settings" vamos al apartado de ""SSG and GPG keys" y pulsamos sobre "new SSH key" ponemos el nombre que queramos en mi caso le puse "DSI key" y para guardarla le damos a "add SSH key", debería de quedar algo como:
-        (imagen github key)
+        ![github_keys](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/github_GP%20keys.png?raw=true)
         Si todo ha ido bien, ahora podría ejecutar el siguiente comando desde la máquina virtual para clonar un repositorio:
          ```
          $git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
          ```
         De esta forma clonaremos el repositorio a nuestro Github sin necesidad de introducir ninguna credencial en el proceso, además gracias a lo que hicimos antes podemos ver la rama de trabajo al acceder al repositorio
-        (Imagen p1_repositorio)
+        ![example_prompt](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/p1_repositorio.png?raw=true)
  
-    - #### Node.js
+    - #### Node.js 
       Lo que faltaria ahora es instalar Node Version Manager (nvm), el gestor de versiones de Node.js. Node.js es un entorno que permite la ejecución de código desarrollado en JavaScript y variantes de este. Ejecutaremos:
        ```
        $wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
