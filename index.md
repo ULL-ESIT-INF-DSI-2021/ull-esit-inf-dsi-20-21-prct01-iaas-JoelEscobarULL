@@ -23,6 +23,40 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
      ```Bash
      ssh usuario@10.6.XXX.XXX
      ```
+     siendo 'XXX' la dirección IP que se le ha asignado.
+     
+     A continuación introducimos "yes" y lo que haremos será introducir la contraseña, en este caso será 'usuario' y nos pedirá otra vez la contraseña y luego la nueva contraseña, que será la que remplazaremos asi que deberiamos anotarla bien. Tener en cuenta que tendrá que volver a iniciar una conexión SSH con su máquina, pero esta vez deberá usar su nueva contraseña para acceder, para cerrar la conexión anterior basta con introducir "exit" en la sesión iniciada.
+     
+     Ahora lo que haremos será modificar el nombre de host de la máquina, buscaremos modificar los ficheros de configuración ejecutando los siguientes comandos:
+      ``` Bash
+       $ cat /etc/hostname
+       $ sudo vi /etc/hostname
+       $ cat /etc/hostname
+      ```
+    Se deberá de visualizar al final algo así:
+    
+    (Imagen con el archivo de configuración)
+    
+    En mi caso llamé a mi máquina DSI22, también podemos modificar el fichero de configuración de la siguiente forma:
+     ```
+     $ sudo vi /etc/hosts
+     $ cat /etc/hosts
+     ```
+    Quedaría de la siguiente forma:
+    
+    (Imagen de HOST)
+    
+    En este caso, he cambiado el antiguo nombre de host ubuntu, por el nombre de host iaas-dsi22. Antes de proceder a reiniciar la máquina virtual para que todos   los cambios tengan efecto, actualice el software de la misma, bastará con las siguientes líneas:
+    ```
+    $ sudo apt update
+    $ sudo apt upgrade
+    ```
+    
+    Y ahora procedemos a reiniciar la máquina, solo necesitará usar:
+     ```
+     $ sudo reboot
+     ```
+     
       
   - ### Instalación de Git y Node.js
     - #### Git
