@@ -55,8 +55,51 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
     Y ahora procedemos a reiniciar la máquina, solo necesitará usar:
      ```
      $ sudo reboot
+     ``` 
+    En lo que la máquina se reincia, podemos hacer que para conectarnos en la máquina no introduzcamos la IP, para hacer esto bastará con editar el fichero `/etc/hosts` en nuestra máquina local (nuestro ordenador personal, no la máquina virtual de la asignatura) y asignarle la dirección ip de nuestra maquina virtual 
      ```
-     
+     $ cat /etc/hosts
+     $ sudo vi /etc/hosts
+     $ cat /etc/hosts
+     ```
+    
+    Se debería poder visualizar algo así:
+    
+    (imagen del fichero local)
+    
+    En caso de no haberlo hecho, en nuestra propia máquina configuraremos la infraestructura de clave pública-privada, para ver si tenemos el fichero generado ejecutaremos el comando `cat .ssh/id_rsa.pub` si no lo tenemos, bastará con hacer:
+     ```
+     $ ssh-keygen
+     ```
+    Y se nos abrirá un script que nos pedirá las opciones de configuración para generar la clave, bastará las de defecto, para ello, simplemente le damos a enter sin escribir nada, es importante que no se introduzca ninguna passphrase asociada al par de claves pública-privada.
+ y ahora ejecutamos el siguiente comando para copiar la clave que acabamos de generar desde nuestra máquina a la máquina virtual
+     ```
+     $ ssh-copy-id usuario@iaas-dsi22
+     ```
+    Vamos a probar lo que acabamos de hacer, entonces ejecutamos nuevamente `exit` para cerrar sesión y bastará con ejecutar el ssh solo con el nombre del host de la máquina, Acuerdese de cambiar el nombre del host, al que haya usted introducido, en mi caso le puse iaas-dsi22  
+     ``` 
+     $ ssh usuario@iaas-dsi22
+     ```
+    Si tampoco quisiera utilizar el nombre de usuario (usuario) de la máquina virtual a la hora de conectarse vía SSH, puede configurar el fichero ` ~/.ssh/config` en su máquina local
+     ```
+     $ touch ~/.ssh/config
+     $ vi ~/.ssh/config 
+     $ cat ~/.ssh/config 
+     ``` 
+    Deberá quedar algo como:
+    (imagen con el config de la maquina virtual)
+    También deberiamos generar las claves necesarias como hicimos con anterioridad en la máquina local:
+     ```
+     $ ssh-keygen 
+     ```
+    nos preguntará donde introducimos la clave especificaremos la siguiente ruta: `/home/usuario/.ssh/id_rsa`. Y pulsamos enter en la siguiente pregunta para hacer que obtenga el passphrase por defecto. Ahora si queremos ver la clave bastará con hacer:
+     ```
+     $ cat .ssh/id_rsa.pub 
+     ```
+    En mi caso se ve así:
+    (Imagen de la clave )
+    Ahora se debería poder iniciar una conexión SSHsolo con el nombre de la máquina virtual, por ejemplo `ssh iaas-dsi22`.
+ 
       
   - ### Instalación de Git y Node.js
     - #### Git
