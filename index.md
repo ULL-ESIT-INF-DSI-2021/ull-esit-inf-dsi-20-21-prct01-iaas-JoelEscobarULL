@@ -51,53 +51,56 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
     $ sudo apt update
     $ sudo apt upgrade
     ```
-    
     Y ahora procedemos a reiniciar la máquina, solo necesitará usar:
-     ```
-     $ sudo reboot
-     ``` 
-    En lo que la máquina se reincia, podemos hacer que para conectarnos en la máquina no introduzcamos la IP, para hacer esto bastará con editar el fichero `/etc/hosts` en nuestra máquina local (nuestro ordenador personal, no la máquina virtual de la asignatura) y asignarle la dirección ip de nuestra maquina virtual 
-     ```
-     $ cat /etc/hosts
-     $ sudo vi /etc/hosts
-     $ cat /etc/hosts
-     ```
+    ```
+    $ sudo reboot
+    ``` 
+    En lo que la máquina se reincia, podemos hacer que para conectarnos en la máquina no introduzcamos la IP, para hacer esto bastará con editar el fichero `/etc/hosts` en nuestra máquina local (nuestro ordenador personal, no la máquina virtual de la asignatura) y asignarle la dirección ip de nuestra maquina virtual
+    ```
+    $ cat /etc/hosts
+    $ sudo vi /etc/hosts
+    $ cat /etc/hosts
+    ```
     Se debería poder visualizar algo así:
-    
+   
     ![local_hosts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/fichero_host_local.png?raw=true)
-    
+   
     En caso de no haberlo hecho, en nuestra propia máquina configuraremos la infraestructura de clave pública-privada, para ver si tenemos el fichero generado ejecutaremos el comando `cat .ssh/id_rsa.pub` si no lo tenemos, bastará con hacer:
-     ```
-     $ ssh-keygen
-     ```
+    ```
+    $ ssh-keygen
+    ```
     Y se nos abrirá un script que nos pedirá las opciones de configuración para generar la clave, bastará las de defecto, para ello, simplemente le damos a enter sin escribir nada, es importante que no se introduzca ninguna passphrase asociada al par de claves pública-privada.
  y ahora ejecutamos el siguiente comando para copiar la clave que acabamos de generar desde nuestra máquina a la máquina virtual
-     ```
-     $ ssh-copy-id usuario@iaas-dsi22
-     ```
+    ```
+    $ ssh-copy-id usuario@iaas-dsi22
+    ```
     Vamos a probar lo que acabamos de hacer, entonces ejecutamos nuevamente `exit` para cerrar sesión y bastará con ejecutar el ssh solo con el nombre del host de la máquina, Acuerdese de cambiar el nombre del host, al que haya usted introducido, en mi caso le puse iaas-dsi22  
-     ``` 
-     $ ssh usuario@iaas-dsi22
-     ```
-     Si tampoco quisiera utilizar el nombre de usuario (usuario) de la máquina virtual a la hora de conectarse vía SSH, puede configurar el fichero `         ~/.ssh/config` en su máquina local
-      ```
-      $ touch ~/.ssh/config
-      $ vi ~/.ssh/config 
-      $ cat ~/.ssh/config
-      ```
-     Deberá quedar algo como:
-     ![ssh_config](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/ficheros_config.png?raw=true)
-     También deberiamos generar las claves necesarias como hicimos con anterioridad en la máquina local:
-     ```
-      $ ssh-keygen 
-      ```
-    nos preguntará donde introducimos la clave especificaremos la siguiente ruta: `/home/usuario/.ssh/id_rsa`. Y pulsamos enter en la siguiente pregunta para hacer que obtenga el passphrase por defecto. Ahora si queremos ver la clave bastará con hacer:
-     ```
-     $ cat .ssh/id_rsa.pub 
-     ```
-    En mi caso se ve así:
-    ![ssh_key](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/clave_virtual.png?raw=true)
-    Ahora se debería poder iniciar una conexión SSHsolo con el nombre de la máquina virtual, por ejemplo `ssh iaas-dsi22`.
+    ``` 
+    $ ssh usuario@iaas-dsi22
+    ```
+    Si tampoco quisiera utilizar el nombre de usuario (usuario) de la máquina virtual a la hora de conectarse vía SSH, puede configurar el fichero ` ~/.ssh/config` en su máquina local
+    ```
+    $ touch ~/.ssh/config
+    $ vi ~/.ssh/config 
+    $ cat ~/.ssh/config 
+    ```
+    Deberá quedar algo como:
+   
+   ![ssh_config](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/ficheros_config.png?raw=true)
+   
+   Aunque también deberiamos generar las claves necesarias como hicimos con anterioridad en la máquina local:
+    ```
+    $ ssh-keygen 
+    ```
+   nos preguntará donde introducimos la clave especificaremos la siguiente ruta: `/home/usuario/.ssh/id_rsa`. Y pulsamos enter en la siguiente pregunta para hacer que obtenga el passphrase por defecto. Ahora si queremos ver la clave bastará con hacer:
+    ```
+    $ cat .ssh/id_rsa.pub 
+    ```
+   En mi caso se ve así:
+   
+   ![ssh_key](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-JoelEscobarULL/blob/main/P1/clave_virtual.png?raw=true)
+   
+   Ahora se debería poder iniciar una conexión SSHsolo con el nombre de la máquina virtual, por ejemplo `ssh iaas-dsi22`.
  
       
   - ### Instalación de Git y Node.js
@@ -112,7 +115,7 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
          $ git config --global user.email alu0101130408@ull.edu.es
          $ git config --list
          ```
-        Con estos comandos lograremos configurar rapidamente git. Ahora lo que faltaría por hacer es configurar el prompt para que se visualize la ruta en la que       nos encontramos en ese momento, por lo que haremos uso de un [script](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh), lo que hice para obtener este script fue crear un fichero llamado "git-prompt.sh" con el comando touch y luego lo edite con vim o vi copiandole el archivo anterior de esta forma la ejecución quedara de la siguiente forma:
+        Con estos comand$ cat .ssh/id_rsa.pubos lograremos configurar rapidamente git. Ahora lo que faltaría por hacer es configurar el prompt para que se visualize la ruta en la que       nos encontramos en ese momento, por lo que haremos uso de un [script](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh), lo que hice para obtener este script fue crear un fichero llamado "git-prompt.sh" con el comando touch y luego lo edite con vim o vi copiandole el archivo anterior de esta forma la ejecución quedara de la siguiente forma:
          ```
          $ touch ~/.git-prompt.sh
          $ vi ~/.git-prompt
@@ -165,7 +168,7 @@ En esta práctica inicial configuraremos nuestra máquina virtual en el servicio
   - ###  Dificultades Encontradas
     
     En general no ha habido ningún tipo de duda debido a una clara explicación aportada en el guión de la practica 1 de Desarrollo de Sistemas Informáticos y cualquier dificultad encontrada era resolvida por los diversos enlaces que hay en el guión como por ejemplo, el uso de Markdwon y Github Pages.
-    
+    En cuanto al uso del markdown,me ha costado bastante el espaciado que le daba al documento ya que se movia todo el texto por un espacio. 
 
 - ## Conclusión
   En mi opinión la práctica no ha tenido dificultades debido a que es la configuración del entorno de trabajo en el que realizaremos las prácticas de esta asignatura por lo que no tengo nada que decir, aprendí acerca de Markdown que era un lenguaje que no usaba y también de su aplicación den Github Pages. 
